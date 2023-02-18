@@ -10,7 +10,9 @@ const App = () => {
         e.preventDefault();
         
         const filteredResult = movies.filter((item) => {
-            return item.title === inputValue;
+            return item.title.toLowerCase() === inputValue.toLowerCase();
+        }).map((item) => {
+            return item.title
         })
 
         const filterMovieList = filteredResult.map((item) => {
